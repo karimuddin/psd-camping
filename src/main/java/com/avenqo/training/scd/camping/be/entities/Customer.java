@@ -1,5 +1,7 @@
 package com.avenqo.training.scd.camping.be.entities;
 
+import org.apache.commons.validator.routines.EmailValidator;
+
 public class Customer {
 	private String lastName;
 	private String firstName;
@@ -22,12 +24,15 @@ public class Customer {
 		this.firstName = firstName;
 	}
 
-	public String geteMail() {
+	public String getEMail() {
 		return eMail;
 	}
 
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEMail(String email) throws InvalidDataException {
+		if (EmailValidator.getInstance().isValid(email))
+			this.eMail = email;
+		else
+			throw new InvalidDataException("EMail-Format is invalid for [" + email + "].");
 	}
 
 	public String getPhone() {
