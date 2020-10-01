@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import com.avenqo.training.scd.camping.be.entities.Customer;
 import com.avenqo.training.scd.camping.be.entities.InvalidDataException;
 
-public class TCustomer {
+public class CustomerTest {
 
 	@Test
 	void invalidEMail() {
