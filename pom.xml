@@ -144,7 +144,8 @@
 					<printFailingErrors>true</printFailingErrors>
 					<rulesets>
 						<!-- A rule set, that comes bundled with PMD -->
-            <ruleset>/category/java/bestpractices.xml</ruleset>
+            			<ruleset>/category/java/bestpractices.xml</ruleset>
+            			<ruleset>/cqm/specific_pmd_rules.xml</ruleset>
 					</rulesets>
 				</configuration>
 				<executions>
