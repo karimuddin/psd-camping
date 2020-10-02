@@ -6,8 +6,8 @@
 	<description>Training rules</description>
 	 <rule ref="category/java/design.xml/CyclomaticComplexity">
 	  <properties>
-        <property name="classReportLevel" value="1" />
-        <property name="methodReportLevel" value="1" />
+        <property name="classReportLevel" value="2" />
+        <property name="methodReportLevel" value="3" />
         <property name="cycloOptions" value="" />
     </properties>
 	 </rule>
