@@ -1,5 +1,7 @@
 package com.avenqo.training.scd.camping.be.entities;
 
+import java.io.File;
+
 public class Bill {
 
 	private String billId;
@@ -12,6 +14,10 @@ public class Bill {
 	private float taxRate;
 
 	public String getBillId() {
+		String s = null;
+		try {
+			File f = new File(s);
+		} catch (Exception e) {}
 		return billId;
 	}
 

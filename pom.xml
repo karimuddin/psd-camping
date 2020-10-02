@@ -142,6 +142,10 @@
 					<failOnViolation>false</failOnViolation>
 					<!-- printFailingErrors is pretty useful -->
 					<printFailingErrors>true</printFailingErrors>
+					<rulesets>
+						<!-- A rule set, that comes bundled with PMD -->
+            <ruleset>/category/java/bestpractices.xml</ruleset>
+					</rulesets>
 				</configuration>
 				<executions>
 					<execution>
