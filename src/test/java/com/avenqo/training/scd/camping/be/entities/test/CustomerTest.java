@@ -25,4 +25,32 @@ public class CustomerTest {
 		
 		assertEquals(mail, c.getEMail());
 	}
+	
+	@Test
+	void checkFirstName()  {
+		String parameter = "Alfred";
+		Customer c = new Customer();
+		c.setFirstName(parameter);
+		
+		assertEquals(parameter, c.getFirstName());
+	}
+	
+	
+	@Test
+	void checkLastName()  {
+		String parameter = "Schmittchen";
+		Customer c = new Customer();
+		c.setLastName(parameter);
+		
+		assertEquals(parameter, c.getLastName());
+	}
+	
+	@Test
+	void checkPhone() {
+		String parameter = "98765";
+		Customer c = new Customer();
+		c.setPhone(parameter);
+		
+		assertEquals(parameter, c.getPhone());
+	}
 }

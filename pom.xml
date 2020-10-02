@@ -21,6 +21,7 @@
 		<maven.surefire.report.version>2.22.2</maven.surefire.report.version>
 		<maven.jxr.version>3.0.0</maven.jxr.version>
 		<jackson-databind.version>2.11.2</jackson-databind.version>
+		<jacoco.version>0.8.6</jacoco.version>
 	</properties>
 
 
@@ -98,6 +99,8 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -114,8 +117,28 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven.surefire.version}</version>
 			</plugin>
-
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<!-- attached to Maven test phase -->
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
+
 	</build>
 	<reporting>
 		<plugins>
