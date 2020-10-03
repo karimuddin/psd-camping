@@ -30,6 +30,10 @@ public class CampSiteModel {
 	public Company getCompany() {
 		return new Company(company);
 	}
+	
+	public Site get(String id) {
+		return siteDao.getSite(id);
+	}
 
 	// ----------- Construction ------------
 
@@ -83,5 +87,7 @@ public class CampSiteModel {
 	public static CampSiteModel getInstance() throws InvalidDataException, DaoConsistencyException {
 		return instance;
 	}
+
+	
 
 }
