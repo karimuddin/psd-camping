@@ -1,35 +1,23 @@
 package com.avenqo.training.scd.camping.be.entities;
 
-public class Category {
+public enum Category {
 
-	private String name;
-	private String description;
-
-	// netto, without tax
-	private float price;
+	A, BC, D, Chalet;
 
 	public String getName() {
-		return name;
-	}
+		if (this == A) return "Kategorie A";
+		if (this == BC) return "Kategorie B/C";
+		if (this == D) return "Kategorie D";
+		if (this == Chalet) return "Mietchalet";
 
-	public void setName(String name) {
-		this.name = name;
+		return null;
 	}
-
+	
 	public String getDescription() {
-		return description;
+		if (this == A) return "Platz für ein Zelt, ohne Stromversorgung";
+		if (this == BC) return "Wohnmobilstellplatz mit Stromversorgung (10 Ampere)";
+		if (this == D) return "Wohnmobilstellplatz mit Stromversorgung (16 Ampere), Trinkwasser- und Abwasseranschluß";
+		if (this == Chalet) return "Bungalow (40 bis 60 qm)";
+		return null;
 	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public float getPrice() {
-		return price;
-	}
-
-	public void setPrice(float price) {
-		this.price = price;
-	}
-
 }
