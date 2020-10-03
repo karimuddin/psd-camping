@@ -14,7 +14,7 @@ public class SiteDaoTest {
 	private SiteDao siteDao = SiteDao.getInstance();
 
 	@Test
-	void createRedundantSite() throws DaoConsistencyException, InvalidDataException {
+	void createRedundantSite() throws DaoConsistencyException, InvalidDataException  {
 		String ID = "123";
 		siteDao.createSite(new Site(ID , Category.Chalet));
 		
