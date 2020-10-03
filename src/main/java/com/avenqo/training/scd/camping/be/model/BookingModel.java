@@ -3,10 +3,11 @@ package com.avenqo.training.scd.camping.be.model;
 import com.avenqo.training.scd.camping.be.dao.BookingEntryDao;
 import com.avenqo.training.scd.camping.be.dao.DaoConsistencyException;
 import com.avenqo.training.scd.camping.be.entities.BookingEntry;
+import com.avenqo.training.scd.camping.be.util.RandomUtility;
 
 public class BookingModel {
 
-	// ----------- Konstanten ------------
+	// ----------- Constants ------------
 
 	// ----------- Attributes ------------
 
@@ -19,6 +20,8 @@ public class BookingModel {
 	}
 
 	public void create(BookingEntry bookingEntry) throws DaoConsistencyException {
+		if (bookingEntry.getId() == null)
+			bookingEntry.setId(RandomUtility.generateLong());
 		bookingDao.create(bookingEntry);
 	}
 	// ----------- Construction ------------

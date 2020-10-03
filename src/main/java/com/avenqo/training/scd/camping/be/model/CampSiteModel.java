@@ -12,7 +12,7 @@ import com.avenqo.training.scd.camping.be.entities.Site;
 
 public class CampSiteModel {
 
-	// ----------- Konstanten ------------
+	// ----------- Constants ------------
 
 	final private static Logger LOG = Logger.getLogger(CampSiteModel.class.getName());
 
