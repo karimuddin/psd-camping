@@ -32,15 +32,16 @@ public class BookingRequest {
 	}
 
 	public void setArrivalDate(Date arrivalDate) {
-		this.arrivalDate = arrivalDate;
+		this.arrivalDate = new Date (arrivalDate.getTime());
 	}
 
 	public Date getDepartureDate() {
-		return departureDate;
+		Object d = departureDate.clone();
+		return d instanceof Date ? (Date) d : null;
 	}
 
 	public void setDepartureDate(Date departureDate) {
-		this.departureDate = departureDate;
+		this.departureDate = new Date(departureDate.getTime());
 	}
 
 	public Site getSite() {

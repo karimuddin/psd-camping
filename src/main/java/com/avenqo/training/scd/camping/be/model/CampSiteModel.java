@@ -1,5 +1,8 @@
 package com.avenqo.training.scd.camping.be.model;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.avenqo.training.scd.camping.be.dao.DaoConsistencyException;
 import com.avenqo.training.scd.camping.be.dao.SiteDao;
 import com.avenqo.training.scd.camping.be.entities.Category;
@@ -9,6 +12,8 @@ import com.avenqo.training.scd.camping.be.entities.Site;
 
 public class CampSiteModel {
 
+	final private static Logger LOG = Logger.getLogger(CampSiteModel.class.getName());
+	
 	// ----------- Attributes ------------
 
 	private Company company = null;
@@ -27,7 +32,7 @@ public class CampSiteModel {
 		try {
 			instance = new CampSiteModel();
 		} catch (DaoConsistencyException | InvalidDataException e) {
-			e.printStackTrace();
+			LOG.log(Level.SEVERE, "CampSiteModel isn't successfully initialized!", e);
 		}
 	}
 
