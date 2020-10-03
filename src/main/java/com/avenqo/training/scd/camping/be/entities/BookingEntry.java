@@ -4,12 +4,21 @@ import java.util.Date;
 
 public class BookingEntry {
 
-	private Long id;
+	private Long id = null;
 	private Customer customer;
 	private Date arrivalDate;
 	private Date departureDate;
 	private Site site;
 
+	public BookingEntry(){}
+	
+	public BookingEntry(Customer c, Date arrival, Date departure, Site s){
+		this.setCustomer(c);
+		this.setArrivalDate(arrival);
+		this.setDepartureDate(departure);
+		this.setSite(site);
+	}
+	
 	public Long getId() {
 		return id;
 	}

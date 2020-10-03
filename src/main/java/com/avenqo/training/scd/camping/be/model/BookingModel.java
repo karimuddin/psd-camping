@@ -24,6 +24,11 @@ public class BookingModel {
 			bookingEntry.setId(RandomUtility.generateLong());
 		bookingDao.create(bookingEntry);
 	}
+	
+	public BookingEntry get(Long id) {
+		return bookingDao.getBooking(id);
+	}
+
 	// ----------- Construction ------------
 
 	private static BookingModel instance = null;
@@ -38,7 +43,5 @@ public class BookingModel {
 	public static BookingModel getInstance() {
 		return instance;
 	}
-
-	
 
 }
