@@ -34,4 +34,9 @@ public class CampSiteModelTest {
 	void getSiteNotExisting() {
 		assertNull(campSiteModel.get("150"));
 	}
+	
+	@Test
+	void getCompanyNotNull() {
+		assertNotNull(campSiteModel.getCompany());
+	}
 }
