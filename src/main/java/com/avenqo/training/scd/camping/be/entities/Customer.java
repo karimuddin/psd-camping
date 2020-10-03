@@ -4,15 +4,15 @@ import java.util.Objects;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
-public class Customer {
+public class Customer extends AbstractEntity {
 	private String lastName;
 	private String firstName;
 	private String eMail;
 	private String phone;
 
-	public Customer() {	
+	public Customer() {
 	}
-	
+
 	public Customer(String _lastName, String _firstName, String _eMail, String _phone) {
 		lastName = _lastName;
 		firstName = _firstName;

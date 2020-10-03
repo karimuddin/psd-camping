@@ -24,6 +24,10 @@ public class CampSiteModel {
 	public Integer getNumberOfPlaces() {
 		return siteDao.getAllSites().size();
 	}
+	
+	public Company getCompany() {
+		return new Company(company);
+	}
 
 	// ----------- Construction ------------
 	private static CampSiteModel instance = null;

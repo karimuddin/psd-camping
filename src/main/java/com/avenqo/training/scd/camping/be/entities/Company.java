@@ -2,7 +2,7 @@ package com.avenqo.training.scd.camping.be.entities;
 
 import java.util.Objects;
 
-public class Company {
+public class Company extends AbstractEntity {
 
 	private String address;
 	private String taxNumber;
@@ -32,10 +32,10 @@ public class Company {
 	public void setTaxNumber(String taxNumber) {
 		this.taxNumber = taxNumber;
 	}
-	
+
 	@Override
-	public boolean equals (Object o) {
-		if ( o instanceof Company) {
+	public boolean equals(Object o) {
+		if (o instanceof Company) {
 			Company c = (Company) o;
 			return Objects.equals(c.address, address) && Objects.equals(c.taxNumber, taxNumber);
 		}
