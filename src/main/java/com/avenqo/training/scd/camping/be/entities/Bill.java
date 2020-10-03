@@ -1,7 +1,5 @@
 package com.avenqo.training.scd.camping.be.entities;
 
-import java.io.File;
-
 public class Bill {
 
 	private String billId;
@@ -10,23 +8,21 @@ public class Bill {
 	private Customer customer;
 	private BookingEntry bookingEntry;
 
-	// MwSt-Satz
-	private float taxRate;
-
-	public String getBillId() {
+	public String getId() {
 		return billId;
 	}
 
-	public void setBillId(String billId) {
+	public void setId(String billId) {
 		this.billId = billId;
 	}
 
 	public Company getCompany() {
-		return company;
+		return new Company(company);
 	}
 
 	public void setCompany(Company company) {
-		this.company = company;
+		
+		this.company = new Company(company);
 	}
 
 	public Customer getCustomer() {
@@ -44,13 +40,4 @@ public class Bill {
 	public void setBookingEntry(BookingEntry bookingEntry) {
 		this.bookingEntry = bookingEntry;
 	}
-
-	public float getTaxRate() {
-		return taxRate;
-	}
-
-	public void setTaxRate(float taxRate) {
-		this.taxRate = taxRate;
-	}
-
 }

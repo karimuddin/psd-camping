@@ -13,7 +13,7 @@ import com.avenqo.training.scd.camping.be.entities.Site;
 public class CampSiteModel {
 
 	final private static Logger LOG = Logger.getLogger(CampSiteModel.class.getName());
-	
+
 	// ----------- Attributes ------------
 
 	private Company company = null;
@@ -36,18 +36,15 @@ public class CampSiteModel {
 		}
 	}
 
-	
 	private CampSiteModel() throws DaoConsistencyException, InvalidDataException {
 		// Init Company
-		company = new Company();
-		company.setAddress("Schöner Blick GmbH & Co. KG, 98765 Pimpelhaus, Am Weinberg 42");
-		company.setTaxNumber("DE12345678");
+		company = new Company("Schöner Blick GmbH & Co. KG, 98765 Pimpelhaus, Am Weinberg 42", "DE12345678");
 
 		for (int i = 1; i <= 149; i++) {
 
 			// Init category
 			Category category = null;
-			if (i > 0 && i <= 46)
+			if (i >= 1 && i <= 46)
 				category = Category.BC;
 			else if (i >= 47 && i <= 70)
 				category = Category.D;

@@ -1,5 +1,7 @@
 package com.avenqo.training.scd.camping.be.entities;
 
+import java.util.Objects;
+
 import org.apache.commons.validator.routines.EmailValidator;
 
 public class Customer {
@@ -7,6 +9,16 @@ public class Customer {
 	private String firstName;
 	private String eMail;
 	private String phone;
+
+	public Customer() {	
+	}
+	
+	public Customer(String _lastName, String _firstName, String _eMail, String _phone) {
+		lastName = _lastName;
+		firstName = _firstName;
+		eMail = _eMail;
+		phone = _phone;
+	}
 
 	public String getLastName() {
 		return lastName;
@@ -43,4 +55,13 @@ public class Customer {
 		this.phone = phone;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (o instanceof Customer) {
+			Customer c = (Customer) o;
+			return Objects.equals(c.eMail, eMail) && Objects.equals(c.lastName, lastName)
+					&& Objects.equals(c.firstName, firstName) && Objects.equals(c.phone, phone);
+		}
+		return false;
+	}
 }
