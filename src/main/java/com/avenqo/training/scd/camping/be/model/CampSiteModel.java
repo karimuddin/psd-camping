@@ -21,6 +21,7 @@ public class CampSiteModel {
 	}
 
 	// ----------- Construction ------------
+	private static CampSiteModel instance = null;
 
 	static {
 		try {
@@ -30,8 +31,7 @@ public class CampSiteModel {
 		}
 	}
 
-	private static CampSiteModel instance = null;
-
+	
 	private CampSiteModel() throws DaoConsistencyException, InvalidDataException {
 		// Init Company
 		company = new Company();
