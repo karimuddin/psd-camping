@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.avenqo.training.scd.camping.be.entities.Category;
 import com.avenqo.training.scd.camping.be.entities.Site;
 
 public class SiteDao {

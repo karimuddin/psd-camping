@@ -27,7 +27,8 @@ public class BookingRequest {
 	}
 
 	public Date getArrivalDate() {
-		return arrivalDate;
+		Object d = arrivalDate.clone();
+		return d instanceof Date ? (Date) d : null;
 	}
 
 	public void setArrivalDate(Date arrivalDate) {

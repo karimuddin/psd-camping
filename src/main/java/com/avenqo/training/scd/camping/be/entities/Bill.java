@@ -14,10 +14,6 @@ public class Bill {
 	private float taxRate;
 
 	public String getBillId() {
-		String s = null;
-		try {
-			File f = new File(s);
-		} catch (Exception e) {}
 		return billId;
 	}
 
