@@ -8,7 +8,7 @@ import com.avenqo.training.scd.camping.be.entities.Site;
 
 public class BookingCreator {
 
-	public void create(Customer currentCustomer, Site site, Date dateArrival, Date dateDeparture)
+	public static void create(Customer currentCustomer, Site site, Date dateArrival, Date dateDeparture)
 			throws OperationFailedException {
 
 		// Check date

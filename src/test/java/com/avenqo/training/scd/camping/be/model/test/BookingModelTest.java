@@ -40,19 +40,6 @@ public class BookingModelTest {
 		assertEquals(num + 1, bookingModel.getNumberOfBookings());
 	}
 
-	@Test
-	void createBookingFailed4NullCustomer() throws InvalidDataException, DaoConsistencyException {
-		BookingEntry bookingEntry = new BookingEntry();
-		bookingEntry.setCustomer(null);
-		bookingEntry.setArrivalDate(DateUtility.incrementDays(new Date(), 2));
-		bookingEntry.setArrivalDate(DateUtility.incrementDays(new Date(), 12));
-		bookingEntry.setSite(new Site("someId", Category.Chalet));
-		bookingModel.create(bookingEntry);
-		Assertions.assertThrows(DaoConsistencyException.class, () -> {
-			bookingModel.create(bookingEntry);
-		});
-	}
-
 	private Customer createCustomer() {
 		return new Customer("last", "first", "e@d.de", "987654321");
 	}
