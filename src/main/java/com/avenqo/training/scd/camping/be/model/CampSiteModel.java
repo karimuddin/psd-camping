@@ -12,6 +12,8 @@ import com.avenqo.training.scd.camping.be.entities.Site;
 
 public class CampSiteModel {
 
+	// ----------- Konstanten ------------
+
 	final private static Logger LOG = Logger.getLogger(CampSiteModel.class.getName());
 
 	// ----------- Attributes ------------
@@ -24,12 +26,13 @@ public class CampSiteModel {
 	public Integer getNumberOfPlaces() {
 		return siteDao.getAllSites().size();
 	}
-	
+
 	public Company getCompany() {
 		return new Company(company);
 	}
 
 	// ----------- Construction ------------
+
 	private static CampSiteModel instance = null;
 
 	static {

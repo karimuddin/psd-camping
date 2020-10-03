@@ -5,7 +5,8 @@ import java.util.Date;
 import com.avenqo.training.scd.camping.be.bdd.utilities.DateUtility;
 import com.avenqo.training.scd.camping.be.dao.SiteDao;
 import com.avenqo.training.scd.camping.be.entities.Customer;
-import com.avenqo.training.scd.camping.be.operations.BookingRequestCreator;
+import com.avenqo.training.scd.camping.be.operations.BookingCreator;
+import com.avenqo.training.scd.camping.be.operations.OperationFailedException;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,8 +28,8 @@ public class Step {
 	}
 
 	@When("the current customer sends a booking request for site {siteId} for tomorrow plus {int} weeks")
-	public void someStep(String siteId, Integer numWeeks) {
-		BookingRequestCreator bookingRequestCreator = new BookingRequestCreator();
+	public void someStep(String siteId, Integer numWeeks) throws OperationFailedException {
+		BookingCreator bookingRequestCreator = new BookingCreator();
 		
 		Date date = new Date();
 		bookingRequestCreator.create (currentCustomer, SiteDao.getInstance().getSite(siteId), 
