@@ -2,7 +2,7 @@ package com.avenqo.training.scd.camping.be.entities;
 
 import java.util.Objects;
 
-public class Company extends AbstractEntity {
+public class Company {
 
 	private String address;
 	private String taxNumber;
@@ -42,4 +42,8 @@ public class Company extends AbstractEntity {
 		return false;
 	}
 
+	@Override
+	public int hashCode() {
+	    return Objects.hash(address, taxNumber);
+	}
 }

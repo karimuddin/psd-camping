@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
-public class Customer extends AbstractEntity {
+public class Customer  {
 	private String lastName;
 	private String firstName;
 	private String eMail;
@@ -63,5 +63,10 @@ public class Customer extends AbstractEntity {
 					&& Objects.equals(c.firstName, firstName) && Objects.equals(c.phone, phone);
 		}
 		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+	    return Objects.hash(lastName, firstName, this.eMail);
 	}
 }
