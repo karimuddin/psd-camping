@@ -4,61 +4,55 @@ import java.util.Date;
 
 public class BookingEntry {
 
-	private Long id = null;
-	private Customer customer;
-	private Date arrivalDate;
-	private Date departureDate;
-	private Site site;
+    private Long id = null;
+    private Customer customer;
+    private Date arrivalDate;
+    private Date departureDate;
+    private Site site;
 
-	public BookingEntry(){}
-	
-	public BookingEntry(Customer c, Date arrival, Date departure, Site s){
-		this.setCustomer(c);
-		this.setArrivalDate(arrival);
-		this.setDepartureDate(departure);
-		this.setSite(site);
-	}
-	
-	public Long getId() {
-		return id;
-	}
+    public BookingEntry() {
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Customer getCustomer() {
-		return customer;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
+    public Customer getCustomer() {
+        return customer;
+    }
 
-	public Date getArrivalDate() {
-		Object d = arrivalDate.clone();
-		return d instanceof Date ? (Date) d : null;
-	}
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
-	public void setArrivalDate(Date arrivalDate) {
-		this.arrivalDate = new Date (arrivalDate.getTime());
-	}
+    public Date getArrivalDate() {
+        Object d = arrivalDate.clone();
+        return d instanceof Date ? (Date) d : null;
+    }
 
-	public Date getDepartureDate() {
-		Object d = departureDate.clone();
-		return d instanceof Date ? (Date) d : null;
-	}
+    public void setArrivalDate(Date arrivalDate) {
+        this.arrivalDate = new Date(arrivalDate.getTime());
+    }
 
-	public void setDepartureDate(Date departureDate) {
-		this.departureDate = new Date(departureDate.getTime());
-	}
+    public Date getDepartureDate() {
+        Object d = departureDate.clone();
+        return d instanceof Date ? (Date) d : null;
+    }
 
-	public Site getSite() {
-		return site;
-	}
+    public void setDepartureDate(Date departureDate) {
+        this.departureDate = new Date(departureDate.getTime());
+    }
 
-	public void setSite(Site site) {
-		this.site = site;
-	}
+    public Site getSite() {
+        return site;
+    }
+
+    public void setSite(Site site) {
+        this.site = site;
+    }
 
 }
