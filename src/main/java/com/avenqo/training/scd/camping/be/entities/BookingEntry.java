@@ -13,6 +13,13 @@ public class BookingEntry {
     public BookingEntry() {
     }
 
+    public BookingEntry(Customer c, Date arrival, Date departure, Site s) {
+        this.setCustomer(c);
+        this.setArrivalDate(arrival);
+        this.setDepartureDate(departure);
+        this.setSite(site);
+    }
+
     public Long getId() {
         return id;
     }
