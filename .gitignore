@@ -16,3 +16,5 @@ org.eclipse.jdt.core.prefs
 *.war
 .settings
 .DS_Store
+/backend.iml
+/.idea
