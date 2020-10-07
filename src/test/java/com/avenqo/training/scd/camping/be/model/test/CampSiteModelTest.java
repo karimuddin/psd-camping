@@ -3,6 +3,7 @@ package com.avenqo.training.scd.camping.be.model.test;
 import com.avenqo.training.scd.camping.be.dao.DaoConsistencyException;
 import com.avenqo.training.scd.camping.be.entities.InvalidDataException;
 import com.avenqo.training.scd.camping.be.model.CampSiteModel;
+import com.avenqo.training.scd.camping.be.model.SiteDataModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +17,7 @@ public class CampSiteModelTest {
 
     @BeforeEach
     void initModel() throws InvalidDataException, DaoConsistencyException {
-        campSiteModel = CampSiteModel.getInstance();
+        campSiteModel = new CampSiteModel(new SiteDataModel());
     }
 
     @Test

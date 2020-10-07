@@ -12,7 +12,7 @@ import com.avenqo.training.scd.camping.be.util.RandomUtility;
 
 public class SiteDaoTest {
 
-	private SiteDao siteDao = SiteDao.getInstance();
+	private SiteDao siteDao = new SiteDao();
 
 	@Test
 	void createRedundantSite() throws DaoConsistencyException, InvalidDataException  {

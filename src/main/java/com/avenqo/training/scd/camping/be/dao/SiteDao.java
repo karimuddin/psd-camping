@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.avenqo.training.scd.camping.be.entities.Site;
+import com.avenqo.training.scd.camping.be.model.SiteDataModel;
 
 public class SiteDao {
 
@@ -26,6 +27,12 @@ public class SiteDao {
 		return site;
 	}
 
+	public void addSites(SiteDataModel siteDataModel) throws DaoConsistencyException {
+		for (Site site : siteDataModel.getSites()) {
+			createSite(site);
+		}
+	}
+
 	public List<Site> getAllSites() {
 
 		List<Site> list = new ArrayList<Site>();
@@ -37,17 +44,8 @@ public class SiteDao {
 
 	// ----------- Construction ------------
 
-	private static SiteDao instance = null;
-
-	private SiteDao() {
+	public SiteDao() {
 		mapSites = new HashMap<>();
-	}
-
-	public static SiteDao getInstance() {
-		if (instance == null) {
-			instance = new SiteDao();
-		}
-		return instance;
 	}
 
 }

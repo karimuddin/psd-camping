@@ -5,8 +5,12 @@ import static org.junit.Assert.fail;
 import java.util.Date;
 
 import com.avenqo.training.scd.camping.be.bdd.utilities.DateUtility;
+import com.avenqo.training.scd.camping.be.dao.DaoConsistencyException;
 import com.avenqo.training.scd.camping.be.dao.SiteDao;
+import com.avenqo.training.scd.camping.be.entities.Category;
 import com.avenqo.training.scd.camping.be.entities.Customer;
+import com.avenqo.training.scd.camping.be.entities.InvalidDataException;
+import com.avenqo.training.scd.camping.be.entities.Site;
 import com.avenqo.training.scd.camping.be.operations.BookingCreator;
 import com.avenqo.training.scd.camping.be.operations.OperationFailedException;
 
@@ -29,9 +33,11 @@ public class ExampleSteps {
 	}
 
 	@When("the current customer sends a booking request for site {string} for tomorrow plus {int} weeks")
-	public void someStep(String siteId, Integer numWeeks) throws OperationFailedException {
+	public void someStep(String siteId, Integer numWeeks) throws OperationFailedException, InvalidDataException, DaoConsistencyException {
 		Date date = new Date();
-		BookingCreator.create(currentCustomer, SiteDao.getInstance().getSite(siteId),
+		SiteDao siteDao = new SiteDao();
+		siteDao.createSite(new Site("1", Category.Chalet));
+		BookingCreator.create(currentCustomer, siteDao.getSite(siteId),
 				DateUtility.incrementDays(date, 1), DateUtility.incrementDays(date, 1 + (numWeeks * 7)));
 	}
 
