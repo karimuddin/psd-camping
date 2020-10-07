@@ -1,5 +1,7 @@
 package com.avenqo.training.scd.camping.be.bdd.steps;
 
+import static org.junit.Assert.fail;
+
 import java.util.Date;
 
 import com.avenqo.training.scd.camping.be.bdd.utilities.DateUtility;
@@ -12,14 +14,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Step {
+public class ExampleSteps {
 
 	// ---- Test Data ----
 	private static Customer currentCustomer = null;
-	
-	
+
 	// ---- Steps ----
-	
+
 	@Given("a defined customer with firstname={string} and lastname={string}")
 	public void givenCustomer(String firstName, String lastName) {
 		currentCustomer = new Customer();
@@ -29,17 +30,14 @@ public class Step {
 
 	@When("the current customer sends a booking request for site {siteId} for tomorrow plus {int} weeks")
 	public void someStep(String siteId, Integer numWeeks) throws OperationFailedException {
-		BookingCreator bookingRequestCreator = new BookingCreator();
-		
 		Date date = new Date();
-		bookingRequestCreator.create (currentCustomer, SiteDao.getInstance().getSite(siteId), 
-				DateUtility.incrementDays(date, 1), 
-				DateUtility.incrementDays(date, 1 + (numWeeks * 7)));
+		BookingCreator.create(currentCustomer, SiteDao.getInstance().getSite(siteId),
+				DateUtility.incrementDays(date, 1), DateUtility.incrementDays(date, 1 + (numWeeks * 7)));
 	}
 
 	@Then("the Maker waits for a Breaker to join")
 	public void otherStep() {
-		// execute other step
+		fail("Not implemented yet");
 	}
 
 }
