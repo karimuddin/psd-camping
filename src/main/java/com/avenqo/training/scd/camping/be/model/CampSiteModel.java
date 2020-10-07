@@ -5,8 +5,6 @@ import com.avenqo.training.scd.camping.be.dao.SiteDao;
 import com.avenqo.training.scd.camping.be.entities.Company;
 import com.avenqo.training.scd.camping.be.entities.Site;
 
-import java.util.logging.Logger;
-
 public class CampSiteModel {
 
     // ----------- Constants ------------
