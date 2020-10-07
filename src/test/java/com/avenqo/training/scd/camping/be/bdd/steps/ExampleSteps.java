@@ -28,7 +28,7 @@ public class ExampleSteps {
 		currentCustomer.setLastName(lastName);
 	}
 
-	@When("the current customer sends a booking request for site {siteId} for tomorrow plus {int} weeks")
+	@When("the current customer sends a booking request for site {string} for tomorrow plus {int} weeks")
 	public void someStep(String siteId, Integer numWeeks) throws OperationFailedException {
 		Date date = new Date();
 		BookingCreator.create(currentCustomer, SiteDao.getInstance().getSite(siteId),
