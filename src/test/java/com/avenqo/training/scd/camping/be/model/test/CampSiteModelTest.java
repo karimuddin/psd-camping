@@ -21,7 +21,7 @@ public class CampSiteModelTest {
 
     @Test
     void checkNumerOfPlaces() {
-        assertEquals(123, campSiteModel.getNumberOfPlaces());
+        assertEquals(122, campSiteModel.getNumberOfPlaces());
     }
 
     @Test
