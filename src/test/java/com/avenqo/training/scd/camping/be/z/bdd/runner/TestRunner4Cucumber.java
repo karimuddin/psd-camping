@@ -1,4 +1,4 @@
-package com.avenqo.training.scd.camping.be.bdd.runner;
+package com.avenqo.training.scd.camping.be.z.bdd.runner;
 
 import org.junit.runner.RunWith;
 
