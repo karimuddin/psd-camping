@@ -7,6 +7,7 @@ import com.avenqo.training.scd.camping.be.dao.SiteDao;
 import com.avenqo.training.scd.camping.be.entities.Category;
 import com.avenqo.training.scd.camping.be.entities.InvalidDataException;
 import com.avenqo.training.scd.camping.be.entities.Site;
+import com.avenqo.training.scd.camping.be.model.CampSiteModel;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,20 +25,16 @@ public class CampSiteDaoTest {
     private CampSiteDao campSiteDao;
 
     @Before
-    public void setup() {
+    public void setup() throws InvalidDataException, DaoConsistencyException {
+        final CampSiteModel campSiteModel = CampSiteModel.getInstance();
         siteDao = SiteDao.getInstance();
         campSiteDao = new CampSiteDaoImpl(siteDao);
     }
 
     @Test
     public void getSitesByCategory() throws InvalidDataException, DaoConsistencyException {
-        siteDao.createSite(new Site("1", Category.Chalet));
-        siteDao.createSite(new Site("2", Category.BC));
-        siteDao.createSite(new Site("3", Category.A));
-        siteDao.createSite(new Site("4", Category.Chalet));
-
         List<Site> chalets = campSiteDao.getSitesByCategory(Category.Chalet);
         Assert.assertNotNull(chalets);
-        Assert.assertEquals(2, chalets.size());
+        Assert.assertEquals(14, chalets.size());
     }
 }
