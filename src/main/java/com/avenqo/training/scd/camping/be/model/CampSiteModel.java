@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 public class CampSiteModel {
 
     // ----------- Constants ------------
-    final private static Logger LOG = Logger.getLogger(CampSiteModel.class.getName());
 
     // ----------- Attributes ------------
     private Company company;
